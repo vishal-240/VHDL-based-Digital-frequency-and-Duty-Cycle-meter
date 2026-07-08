@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Wed Jul 08 19:35:58 2026
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : meter
+Top-level Entity Name : top_level
+Family : MAX 10
+Total logic elements : 1,326
+    Total combinational functions : 1,292
+    Dedicated logic registers : 178
+Total registers : 178
+Total pins : 43
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 4
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

@@ -1,0 +1,211 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/simulation/modelsim
+Eclock_divider
+Z1 w1783519514
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/clock_divider.vhd
+Z5 FC:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/clock_divider.vhd
+l0
+L4
+V4Ki]1MJe]IeVcS4F[aPQ73
+!s100 ?k5jJ9TkeCN;g=X^^b9kF0
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1783519570
+!i10b 1
+Z8 !s108 1783519570.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/clock_divider.vhd|
+Z10 !s107 C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/clock_divider.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+DEx4 work 13 clock_divider 0 22 4Ki]1MJe]IeVcS4F[aPQ73
+l19
+L16
+VgQdi3oiM1KBWDfgCidfa_0
+!s100 >BCA5J6@1A^g?AYeXA73J1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Econtrol_fsm
+Z13 w1783516855
+R2
+R3
+R0
+Z14 8C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/control_fsm.vhd
+Z15 FC:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/control_fsm.vhd
+l0
+L4
+VG7DC[C_ojbHnFi;DiWI:70
+!s100 CiJYb_[eC^lnF@TXQYhko1
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/control_fsm.vhd|
+Z17 !s107 C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/control_fsm.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 11 control_fsm 0 22 G7DC[C_ojbHnFi;DiWI:70
+l20
+L17
+V<9`2aPOi?_E:7XQBV8OaW3
+!s100 d9<n=3jV0Voo?IAZ4l=CN3
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Ecounter_module
+Z18 w1783516843
+Z19 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z20 8C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/counter_module.vhd
+Z21 FC:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/counter_module.vhd
+l0
+L5
+V^T[355Bf1hFJ]5oU6R8BL2
+!s100 0I2PKFo4f<E;OGAJ@=O2R0
+R6
+31
+R7
+!i10b 1
+R8
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/counter_module.vhd|
+Z23 !s107 C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/counter_module.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R19
+R2
+R3
+DEx4 work 14 counter_module 0 22 ^T[355Bf1hFJ]5oU6R8BL2
+l18
+L16
+Vfl<0N[ihj:OQjQ=?NHQz`0
+!s100 Wj6cjNWz?AH]9KYnG`nN>2
+R6
+31
+R7
+!i10b 1
+R8
+R22
+R23
+!i113 1
+R11
+R12
+Etb_top_level
+Z24 w1783517461
+R19
+R2
+R3
+R0
+Z25 8C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/../testbench.vhd
+Z26 FC:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/../testbench.vhd
+l0
+L5
+Vh[N6:LLMdg;PHeEZ@Y3C<0
+!s100 03<K[bd0ljfA3@S[<6TbK2
+R6
+31
+R7
+!i10b 1
+R8
+Z27 !s90 -reportprogress|300|-93|-work|work|C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/../testbench.vhd|
+Z28 !s107 C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/../testbench.vhd|
+!i113 1
+R11
+R12
+Asim
+R19
+R2
+R3
+DEx4 work 12 tb_top_level 0 22 h[N6:LLMdg;PHeEZ@Y3C<0
+l28
+L8
+Vf]F3=:iS?2iWcTV`>O9UJ0
+!s100 8C?UT>?9S[L_MXfiDBb8h1
+R6
+31
+R7
+!i10b 1
+R8
+R27
+R28
+!i113 1
+R11
+R12
+Etop_level
+Z29 w1783517205
+R19
+R2
+R3
+R0
+Z30 8C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd
+Z31 FC:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd
+l0
+L5
+V9kPcBI<0VEQ=MKG;9OYMj1
+!s100 8K81UD:c=YJCK5>TTXMD32
+R6
+31
+R7
+!i10b 1
+R8
+Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd|
+Z33 !s107 C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd|
+!i113 1
+R11
+R12
+Astructural
+R19
+R2
+R3
+DEx4 work 9 top_level 0 22 9kPcBI<0VEQ=MKG;9OYMj1
+l67
+L16
+V:ldo@TS[HmeL6n30eQann2
+!s100 CZH9;:OYAVczS;o]5Dhc;3
+R6
+31
+R7
+!i10b 1
+R8
+R32
+R33
+!i113 1
+R11
+R12

@@ -1,0 +1,591 @@
+Analysis & Synthesis report for meter
+Wed Jul 08 19:35:58 2026
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |top_level|control_fsm:U_FSM|state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: clock_divider:U_CLK_DIV
+ 14. Parameter Settings for User Entity Instance: counter_module:U_FREQ_COUNTER
+ 15. Parameter Settings for User Entity Instance: counter_module:U_PERIOD_COUNTER
+ 16. Parameter Settings for User Entity Instance: counter_module:U_HIGH_TIME_COUNTER
+ 17. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 19. lpm_mult Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "counter_module:U_HIGH_TIME_COUNTER"
+ 21. Port Connectivity Checks: "counter_module:U_PERIOD_COUNTER"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jul 08 19:35:58 2026       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; meter                                       ;
+; Top-level Entity Name              ; top_level                                   ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 1,326                                       ;
+;     Total combinational functions  ; 1,292                                       ;
+;     Dedicated logic registers      ; 178                                         ;
+; Total registers                    ; 178                                         ;
+; Total pins                         ; 43                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 4                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M08DAF484C8G     ;                    ;
+; Top-level entity name                                            ; top_level          ; meter              ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                              ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+; ../clock_divider.vhd             ; yes             ; User VHDL File               ; C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/clock_divider.vhd                  ;         ;
+; ../counter_module.vhd            ; yes             ; User VHDL File               ; C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/counter_module.vhd                 ;         ;
+; ../control_fsm.vhd               ; yes             ; User VHDL File               ; C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/control_fsm.vhd                    ;         ;
+; ../top_level.vhd                 ; yes             ; User VHDL File               ; C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd                      ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf                                                       ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                                                     ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                    ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc                                                       ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc                                                       ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc                                                       ;         ;
+; db/mult_3qs.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/mult_3qs.tdf            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                     ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc                                                    ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                ;         ;
+; db/lpm_divide_6vl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/lpm_divide_6vl.tdf      ;         ;
+; db/sign_div_unsign_8nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/sign_div_unsign_8nh.tdf ;         ;
+; db/alt_u_div_qke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/alt_u_div_qke.tdf       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/add_sub_t3c.tdf         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/add_sub_u3c.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 1,326         ;
+;                                             ;               ;
+; Total combinational functions               ; 1292          ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 497           ;
+;     -- 3 input functions                    ; 576           ;
+;     -- <=2 input functions                  ; 219           ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 632           ;
+;     -- arithmetic mode                      ; 660           ;
+;                                             ;               ;
+; Total registers                             ; 178           ;
+;     -- Dedicated logic registers            ; 178           ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 43            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 4             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; clk_50M~input ;
+; Maximum fan-out                             ; 178           ;
+; Total fan-out                               ; 4792          ;
+; Average fan-out                             ; 3.07          ;
++---------------------------------------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                  ;
++-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                              ; Entity Name         ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |top_level                              ; 1292 (34)           ; 178 (43)                  ; 0           ; 0          ; 4            ; 0       ; 2         ; 43   ; 0            ; 0          ; |top_level                                                                                                                       ; top_level           ; work         ;
+;    |clock_divider:U_CLK_DIV|            ; 44 (44)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|clock_divider:U_CLK_DIV                                                                                               ; clock_divider       ; work         ;
+;    |control_fsm:U_FSM|                  ; 14 (14)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|control_fsm:U_FSM                                                                                                     ; control_fsm         ; work         ;
+;    |counter_module:U_FREQ_COUNTER|      ; 33 (33)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|counter_module:U_FREQ_COUNTER                                                                                         ; counter_module      ; work         ;
+;    |counter_module:U_HIGH_TIME_COUNTER| ; 63 (63)             ; 31 (31)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|counter_module:U_HIGH_TIME_COUNTER                                                                                    ; counter_module      ; work         ;
+;    |counter_module:U_PERIOD_COUNTER|    ; 31 (31)             ; 31 (31)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|counter_module:U_PERIOD_COUNTER                                                                                       ; counter_module      ; work         ;
+;    |lpm_divide:Div0|                    ; 1059 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|lpm_divide:Div0                                                                                                       ; lpm_divide          ; work         ;
+;       |lpm_divide_6vl:auto_generated|   ; 1059 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|lpm_divide:Div0|lpm_divide_6vl:auto_generated                                                                         ; lpm_divide_6vl      ; work         ;
+;          |sign_div_unsign_8nh:divider|  ; 1059 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|lpm_divide:Div0|lpm_divide_6vl:auto_generated|sign_div_unsign_8nh:divider                                             ; sign_div_unsign_8nh ; work         ;
+;             |alt_u_div_qke:divider|     ; 1059 (1057)         ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|lpm_divide:Div0|lpm_divide_6vl:auto_generated|sign_div_unsign_8nh:divider|alt_u_div_qke:divider                       ; alt_u_div_qke       ; work         ;
+;                |add_sub_u3c:add_sub_1|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|lpm_divide:Div0|lpm_divide_6vl:auto_generated|sign_div_unsign_8nh:divider|alt_u_div_qke:divider|add_sub_u3c:add_sub_1 ; add_sub_u3c         ; work         ;
+;    |lpm_mult:Mult0|                     ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |top_level|lpm_mult:Mult0                                                                                                        ; lpm_mult            ; work         ;
+;       |mult_3qs:auto_generated|         ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |top_level|lpm_mult:Mult0|mult_3qs:auto_generated                                                                                ; mult_3qs            ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 2           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 4           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 2           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------+
+; State Machine - |top_level|control_fsm:U_FSM|state                                          ;
++-----------------+------------+---------------+---------------+-----------------+------------+
+; Name            ; state.HOLD ; state.CAPTURE ; state.MEASURE ; state.WAIT_EDGE ; state.IDLE ;
++-----------------+------------+---------------+---------------+-----------------+------------+
+; state.IDLE      ; 0          ; 0             ; 0             ; 0               ; 0          ;
+; state.WAIT_EDGE ; 0          ; 0             ; 0             ; 1               ; 1          ;
+; state.MEASURE   ; 0          ; 0             ; 1             ; 0               ; 1          ;
+; state.CAPTURE   ; 0          ; 1             ; 0             ; 0               ; 1          ;
+; state.HOLD      ; 1          ; 0             ; 0             ; 0               ; 1          ;
++-----------------+------------+---------------+---------------+-----------------+------------+
+
+
++-----------------------------------------------------------------------+
+; Registers Removed During Synthesis                                    ;
++--------------------------------------------------+--------------------+
+; Register name                                    ; Reason for Removal ;
++--------------------------------------------------+--------------------+
+; counter_module:U_HIGH_TIME_COUNTER|count_reg[31] ; Lost fanout        ;
+; counter_module:U_PERIOD_COUNTER|count_reg[31]    ; Lost fanout        ;
+; Total Number of Removed Registers = 2            ;                    ;
++--------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 178   ;
+; Number of registers using Synchronous Clear  ; 95    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 33    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 103   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top_level|counter_module:U_FREQ_COUNTER|count_reg[1]       ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |top_level|counter_module:U_HIGH_TIME_COUNTER|count_reg[22] ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |top_level|control_fsm:U_FSM|state                          ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top_level|control_fsm:U_FSM|state                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_divider:U_CLK_DIV ;
++----------------+----------+------------------------------------------+
+; Parameter Name ; Value    ; Type                                     ;
++----------------+----------+------------------------------------------+
+; sys_clk_freq   ; 50000000 ; Signed Integer                           ;
+; target_freq    ; 1        ; Signed Integer                           ;
++----------------+----------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_module:U_FREQ_COUNTER ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; width          ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_module:U_PERIOD_COUNTER ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; width          ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_module:U_HIGH_TIME_COUNTER ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; width          ; 32    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                 ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 31       ; Untyped             ;
+; LPM_WIDTHB                                     ; 7        ; Untyped             ;
+; LPM_WIDTHP                                     ; 38       ; Untyped             ;
+; LPM_WIDTHR                                     ; 38       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES      ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_3qs ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 31             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_6vl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 31             ;
+;     -- LPM_WIDTHB                     ; 7              ;
+;     -- LPM_WIDTHP                     ; 38             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; YES            ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_module:U_HIGH_TIME_COUNTER"                                                          ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; count_out[31] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_module:U_PERIOD_COUNTER"                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; count_pulse   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; count_out[31] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 43                          ;
+; cycloneiii_ff         ; 178                         ;
+;     CLR               ; 1                           ;
+;     CLR SCLR          ; 32                          ;
+;     ENA               ; 71                          ;
+;     ENA SCLR          ; 32                          ;
+;     SCLR              ; 31                          ;
+;     plain             ; 11                          ;
+; cycloneiii_lcell_comb ; 1292                        ;
+;     arith             ; 660                         ;
+;         2 data inputs ; 129                         ;
+;         3 data inputs ; 531                         ;
+;     normal            ; 632                         ;
+;         0 data inputs ; 30                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 55                          ;
+;         3 data inputs ; 45                          ;
+;         4 data inputs ; 497                         ;
+; cycloneiii_mac_mult   ; 2                           ;
+; cycloneiii_mac_out    ; 2                           ;
+;                       ;                             ;
+; Max LUT depth         ; 121.50                      ;
+; Average LUT depth     ; 90.73                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Jul 08 19:35:41 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off meter -c meter
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/visha/downloads/iitb/2_xtra/vhdl-based-digital-frequency-and-duty-cycle-meter/clock_divider.vhd
+    Info (12022): Found design unit 1: clock_divider-Behavioral File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/clock_divider.vhd Line: 16
+    Info (12023): Found entity 1: clock_divider File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/clock_divider.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/visha/downloads/iitb/2_xtra/vhdl-based-digital-frequency-and-duty-cycle-meter/counter_module.vhd
+    Info (12022): Found design unit 1: counter_module-Behavioral File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/counter_module.vhd Line: 16
+    Info (12023): Found entity 1: counter_module File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/counter_module.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/visha/downloads/iitb/2_xtra/vhdl-based-digital-frequency-and-duty-cycle-meter/control_fsm.vhd
+    Info (12022): Found design unit 1: control_fsm-Behavioral File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/control_fsm.vhd Line: 17
+    Info (12023): Found entity 1: control_fsm File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/control_fsm.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/visha/downloads/iitb/2_xtra/vhdl-based-digital-frequency-and-duty-cycle-meter/top_level.vhd
+    Info (12022): Found design unit 1: top_level-Structural File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 16
+    Info (12023): Found entity 1: top_level File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 5
+Info (12127): Elaborating entity "top_level" for the top level hierarchy
+Info (12128): Elaborating entity "control_fsm" for hierarchy "control_fsm:U_FSM" File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 86
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:U_CLK_DIV" File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 97
+Info (12128): Elaborating entity "counter_module" for hierarchy "counter_module:U_FREQ_COUNTER" File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 109
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0" File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 157
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 157
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0" File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 157
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter: File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 157
+    Info (12134): Parameter "LPM_WIDTHA" = "31"
+    Info (12134): Parameter "LPM_WIDTHB" = "7"
+    Info (12134): Parameter "LPM_WIDTHP" = "38"
+    Info (12134): Parameter "LPM_WIDTHR" = "38"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_3qs.tdf
+    Info (12023): Found entity 1: mult_3qs File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/mult_3qs.tdf Line: 30
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 157
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/top_level.vhd Line: 157
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "31"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6vl.tdf
+    Info (12023): Found entity 1: lpm_divide_6vl File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/lpm_divide_6vl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_8nh File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/sign_div_unsign_8nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qke.tdf
+    Info (12023): Found entity 1: alt_u_div_qke File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/alt_u_div_qke.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/add_sub_t3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/visha/Downloads/IITB/2_XTRA/VHDL-based-Digital-frequency-and-Duty-Cycle-meter/Quartus/db/add_sub_u3c.tdf Line: 22
+Info (13014): Ignored 35 buffer(s)
+    Info (13019): Ignored 35 SOFT buffer(s)
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1373 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 40 output pins
+    Info (21061): Implemented 1326 logic cells
+    Info (21062): Implemented 4 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Wed Jul 08 19:35:58 2026
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:33
+
+
